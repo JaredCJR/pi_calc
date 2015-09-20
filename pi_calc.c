@@ -6,7 +6,7 @@
 
 #if defined(Version_asm)
 
-extern float pi_func(size_t dt);
+extern double pi_func(size_t dt);
 
 #endif
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 			clock_gettime(CLOCK_MONOTONIC, &t_start);
 			nsec1 = ((uint64_t)(t_start.tv_sec) * 1000000000LL + t_start.tv_nsec);
 
-            result_pi = (double)pi_func(1280000);
+            result_pi = pi_func(1280000);
 
 			clock_gettime(CLOCK_MONOTONIC, &t_end);
 			nsec2 = (uint64_t)(t_end.tv_sec) * 1000000000LL + t_end.tv_nsec;
